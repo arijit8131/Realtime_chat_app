@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-// const http = require('http').createServer(app)
+const http = require('http').createServer(app)
 
 const PORT = process.env.port || 3000
 
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 //socket
 
 
-const io = require('socket.io')( http)
+const io = require('socket.io')(http)
 
 io.on('connection',(socket) =>{
     console.log('connected...')
