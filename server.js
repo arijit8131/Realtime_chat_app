@@ -1,13 +1,13 @@
 const express = require('express')
 const app = express()
-const http = require('http').createServer(app)
+// const http = require('http').createServer(app)
 
 const PORT = process.env.port || 3000
 
-http.listen(PORT, () => {
+// app.listen(PORT, () => {
 
-    console.log(`Listening on port ${PORT}`)
-})
+//     console.log(`Listening on port ${PORT}`)
+// })
 
 // app.use(express.static(__dirname + '/public'))
 
@@ -15,6 +15,8 @@ app.get('/', (req, res) => {
     // res.sendFile(__dirname + '/index.html')
      res.send("backend server")
 })
+
+
 
 //socket
 
@@ -27,4 +29,10 @@ io.on('connection',(socket) =>{
        socket.broadcast.emit('message', msg)
     })
     
+})
+
+
+app.listen(PORT, () => {
+
+    console.log(`Listening on port ${PORT}`)
 })
