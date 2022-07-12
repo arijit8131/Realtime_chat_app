@@ -9,11 +9,11 @@ http.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 })
 
-app.use(express.static(__dirname + '/public'))
+// app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-
+    // res.sendFile(__dirname + '/index.html')
+     res.send("backend server")
 })
 
 //socket

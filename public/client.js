@@ -1,11 +1,11 @@
 const socket = io()
-let name;
+let names;
 let textarea = document.querySelector('#textarea')
 let messageArea = document.querySelector('.message__area')
 do{
-     name = prompt('please enter your name: ')
+     names = prompt('please enter your name: ')
 
-}while(!name)
+}while(!names)
 
 textarea.addEventListener('keyup',(e) =>{
    if(e.key == 'Enter'){
@@ -15,7 +15,7 @@ textarea.addEventListener('keyup',(e) =>{
 
 function sendMessage(message) {
     let msg = {
-        user: name,
+        user: names,
         message: message.trim()
     }
 
